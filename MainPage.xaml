@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KolekcjeKania.MainPage"
+             Title="Strona Główna"
+             BackgroundColor="#6C9FD9">
+
+    <VerticalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Entry x:Name="collectionEntry" Placeholder="Wpisz nazwę nowej kolekcji" WidthRequest="200" BackgroundColor="white" TextColor="black"/>
+            <Button Text="Dodaj kolekcje" Clicked="AddCollection_Clicked" BackgroundColor="#7E6CD9" Margin="0,0,0,10" TextColor="White"/>
+            <Button Text="Usuń kolekcję" Clicked="DeleteCollection_Clicked" BackgroundColor="#7E6CD9" Margin="0,0,0,10" TextColor="White"/>
+        </HorizontalStackLayout>
+        <CollectionView x:Name="collections" SelectionMode="Single" SelectionChanged="CollectionSelected">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout>
+                        <Label Text="{Binding Name}" FontSize="20"></Label>
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </VerticalStackLayout>
+
+</ContentPage>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KolekcjeKania.CollectionPage"
+             Title="Kolekcja" BackgroundColor="#6C9FD9">
+    <VerticalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Entry x:Name="elementEntry" Placeholder="Wpisz nazwę nowego elementu" WidthRequest="228" BackgroundColor="white" TextColor="black"/>
+            <Button Text="Dodaj element" Clicked="AddElement_Clicked" BackgroundColor="#7E6CD9" Margin="0,0,0,10" TextColor="White"/>
+            <Button Text="Edytuj element" Clicked="EditElement_Clicked" BackgroundColor="#7E6CD9" Margin="0,0,0,10" TextColor="White"/>
+            <Button Text="Usuń element" Clicked="DeleteElement_Clicked" BackgroundColor="#7E6CD9" Margin="0,0,0,10" TextColor="White"/>
+        </HorizontalStackLayout>
+        <Label Text="Elementy: "/>
+        <CollectionView x:Name="elements" SelectionMode="Single">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout>
+                        <Label Text="{Binding Name}"></Label>
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>
